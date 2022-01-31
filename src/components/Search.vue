@@ -1,27 +1,31 @@
 <script>
+import FilmList from './FilmList.vue'  
+
   export default {
+    name: "Search",
     data() {
-      return { films: [] }
+        return { films: [] };
     },
     methods: {
-      getFilms() {
-        fetch('https://ghibliapi.herokuapp.com/films/')
-          .then((response) => response.json())
-        .then((films) => {
-          this.films = films
-        })
-    }
-    }}
+        getFilms() {
+            fetch("https://ghibliapi.herokuapp.com/films/")
+                .then((response) => response.json())
+                .then((films) => {
+                this.films = films;
+            });
+        }
+    },
+    components: { FilmList }
+}
+
+
 </script>
 
 
 <template>
+<div class="search">
   <button @click="getFilms">Get films!</button>
-
-  <div>
-    <ol>
-      <li v-for="film in films">{{ film.title }}</li>
-    </ol>
+  <FilmList :films="films" />
 </div>
 
 </template>
