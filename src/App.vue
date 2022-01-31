@@ -1,10 +1,8 @@
 <script>
-  import FilmList from './components/FilmList.vue'
   import Search from './components/Search.vue'
   
   export default {
     components: {
-      FilmList,
       Search
     },
     data() {
@@ -36,3 +34,5 @@
 </main>
 
 </template>
+
+
