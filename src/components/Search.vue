@@ -17,8 +17,6 @@ import FilmList from './FilmList.vue'
     },
     components: { FilmList }
 }
-
-
 </script>
 
 
@@ -26,6 +24,11 @@ import FilmList from './FilmList.vue'
 <div class="search">
   <button @click="getFilms">Get films!</button>
   <FilmList :films="films" />
+  <input
+    type="button"
+    :value="$store.state.counter"
+    @click="$store.commit('increment')"
+  />
 </div>
 
 </template>

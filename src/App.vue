@@ -1,9 +1,11 @@
 <script>
   import Search from './components/Search.vue'
-  
+  import store from './store'
+
   export default {
     components: {
-      Search
+      Search,
+      store
     },
     data() {
         return { }
